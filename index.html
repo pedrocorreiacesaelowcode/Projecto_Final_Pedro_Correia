@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PCA</title>
+    <link rel="shortcut icon" href="images/PCA_Final_Icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+<body>
+<section id="container">
+  <div>
+        <div id="presentation-box"></div>
+          <h1>Meu Portfólio</h1>
+              Sou estudante de Programação Low Code...
+        <div id="image-box">
+        <img src="https://www.hashstudioz.com/blog/wp-content/uploads/2022/07/low-code-No-code-vs-Custom-App-Development-300x169.png" alt="Banner por link" >
+        </div>
+  <div>
+    <il>
+      <li>Sql</li>
+      <li>Web</li>
+      <li>Gestão de Projecto</li>
+    </il>
+  </div>
+
+
+
+
+Botão Mudar Tema
+Botão Trocar Imagem
+Botão Adicionar Hobby
+
+</div>
+<div>
+
+<!-- Isto é um form. -->
+    <form action="www.ourserver.pt">
+    <input type="text" placeholder="Nome:" required />
+    <input type="password" placeholder="Password:" required minlength="6" /><br>
+        <label for="">Insira data de entrega da tarefa:</label><br>
+        <input id="task-date" type="datetime-local" />
+            <input type="datetime-local" /><br>
+            <input type="number" required /><br>
+    <button type="submit">Submeter</button>
+    </form>
+Form
+Personalizar Portfólio
+Nome:                   Caixa
+Frase de apresentação:  Caixa
+Cor favorita:           Caixa-cor-picket
+Foto (URL):             Caixa
+Atualizar Portfólio     Botão
+</div>
+</section>
+
+
+
+<!-- 
+HTML
+CSS
+Bootstrap
+interatividade com JavaScript
+API pública à escolha (piadas)
+   - Recriar o portfólio usando a estrutura de grelha e componentes do Bootstrap
+     (navbar, cards, buttons, forms, etc.).
+   - Ficheiro script.js externo.
+   - Fazer um pedido fetch() a uma API pública e mostrar os dados no portfólio.
+   - HTML5 estruturado com classes do Bootstrap (CDN do Bootstrap incluída no <head>).
+   - CSS próprio para pequenos ajustes (ficheiro styles.css).
+   - JavaScript externo (script.js) com manipulação do DOM.
+   - Uma API HTTP pública simples, consumida com fetch() ou similar.
+   - Tema claro/escuro (modo dark Bootstrap)
+   - Botão ou switch que alterna entre tema claro e escuro, alterando classes Bootstrap
+     (ex.: bg-light / bg-dark, text-dark / text-light).
+   - Trocar imagem principal dinâmicamente.
+   - Botão “Trocar Imagem” que muda a imagem principal do portfólio para outra imagem por defeito (URL fixa no JS).
+   - Adicionar novo hobby à lista
+   - Botão “Adicionar Hobby” abre um prompt, pergunta o hobby e adiciona como novo <li> numa lista existente.
+   - Formulário com campos: nome, frase de apresentação, cor favorita e URL de foto.
+     Ao submeter, deve atualizar o nome, descrição, imagem e cor de fundo do cartão de perfil sem recarregar a página, usando event.preventDefault().
+   - API obrigatória. Criar uma secção “Inspiração do dia” (ou semelhante) que vai buscar dados a uma API pública com fetch().
+     API de citações (quote)
+     Deve existir um botão “Carregar inspiração” que, ao clicar, faz o pedido à API e mostra o resultado no ecrã (texto ou imagem).
+   - Eventos e manipulação do DOM
+   - Uso obrigatório de addEventListener() em todos os botões/formulário, não usar onclick no HTML.
+   - Manipulação de innerText/textContent, src, style e classes (classList.add/remove/toggle).
+   - Atalho com tecla Enter. Ao carregar na tecla Enter em qualquer parte da página, mostrar alert:
+     ('Tem a certeza que acabou o exercício?').
+   - Gerador de cores aleatórias
+     Botão que gera uma cor aleatória e aplica essa cor como background de uma secção
+     (por exemplo, da área de hobbies ou do cabeçalho).
+   - Contador de atualizações do perfil com localStorage.
+     Cada vez que o formulário de perfil é submetido com sucesso, incrementar um contador guardado em localStorage e mostrar na página quantas vezes o perfil foi 
+atualizado.
+   - Botão de reset que repõe o estado inicial da página (tema original, imagem original, hobbies iniciais, dados do formulário e contador).
+
+Entrega: O projecto deve ser carregado no GitHub e no GitPages, anexando os links resultantes à tarefa.
+GitHub    - 
+GitPages  - 
+ -->
+
+</body>
+</html>
