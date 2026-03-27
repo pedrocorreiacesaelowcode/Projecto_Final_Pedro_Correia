@@ -1,25 +1,25 @@
-const themeBtn = document.getElementById("themeBtn");
-const imageBtn = document.getElementById("imageBtn");
-const hobbyBtn = document.getElementById("hobbyBtn");
-const colorBtn = document.getElementById("colorBtn");
-const resetBtn = document.getElementById("resetBtn");
-const jokeBtn = document.getElementById("jokeBtn");
+const themeBtn  = document.getElementById("themeBtn");
+const imageBtn  = document.getElementById("imageBtn");
+const hobbyBtn  = document.getElementById("hobbyBtn");
+const colorBtn  = document.getElementById("colorBtn");
+const resetBtn  = document.getElementById("resetBtn");
+const jokeBtn   = document.getElementById("jokeBtn");
 
-const body = document.body;
-const navbar = document.getElementById("navbar");
+const body      = document.body;
+const navbar    = document.getElementById("navbar");
 
-const mainImage = document.getElementById("mainImage");
-const hobbyList = document.getElementById("hobbyList");
-const hobbySection = document.getElementById("hobbySection");
+const mainImage     = document.getElementById("mainImage");
+const hobbyList     = document.getElementById("hobbyList");
+const hobbySection  = document.getElementById("hobbySection");
 
-const profileForm = document.getElementById("profileForm");
-const profileName = document.getElementById("profileName");
-const profileDesc = document.getElementById("profileDesc");
-const profileImg = document.getElementById("profileImg");
-const profileCard = document.getElementById("profileCard");
+const profileForm   = document.getElementById("profileForm");
+const profileName   = document.getElementById("profileName");
+const profileDesc   = document.getElementById("profileDesc");
+const profileImg    = document.getElementById("profileImg");
+const profileCard   = document.getElementById("profileCard");
 
-const updateCount = document.getElementById("updateCount");
-const jokeText = document.getElementById("jokeText");
+const updateCount   = document.getElementById("updateCount");
+const jokeText      = document.getElementById("jokeText");
 
 const initialState = {
   name: "Pedro Correia",
@@ -48,7 +48,7 @@ themeBtn.addEventListener("click", () => {
   profileCard.classList.toggle("bg-dark");
   profileCard.classList.toggle("text-light");
 
-  if (themeBtn.innerText === "Tema") {
+  if (themeBtn.innerText === "Dark Mode") {
     themeBtn.innerText = "Light Mode";
   } else {
     themeBtn.innerText = "Dark Mode";
@@ -58,7 +58,7 @@ themeBtn.addEventListener("click", () => {
 
 imageBtn.addEventListener("click", () => {
   if (mainImage.src.includes("hashstudioz")) {
-    mainImage.src = "https://picsum.photos/600";
+    mainImage.src = "https://thfvnext.bing.com/th/id/OIP.wl5aYb9S8XoYCUkppifIegHaHa?w=186&h=186&c=7&r=0&o=7&cb=thfvnext&dpr=1.8&pid=1.7&rm=3";
   } else {
     mainImage.src = initialState.mainImg;
   }
@@ -81,10 +81,10 @@ colorBtn.addEventListener("click", () => {
 profileForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const name = document.getElementById("nameInput").value;
-  const desc = document.getElementById("descInput").value;
-  const color = document.getElementById("colorInput").value;
-  const img = document.getElementById("imgInput").value;
+  const name    = document.getElementById("nameInput").value;
+  const desc    = document.getElementById("descInput").value;
+  const color   = document.getElementById("colorInput").value;
+  const img     = document.getElementById("imgInput").value;
 
   profileName.innerText = name;
   profileDesc.innerText = desc;
@@ -110,7 +110,7 @@ jokeBtn.addEventListener("click", () => {
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    alert("Tem a certeza de que acabou a sua visita?");
+    alert("Tem a certeza de que acabou a sua visita? Beba mais um copo.");
   }
 });
 

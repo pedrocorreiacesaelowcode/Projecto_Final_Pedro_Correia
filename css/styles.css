@@ -1,19 +1,17 @@
 body {
-  transition: all 0.3s ease;
+      transition:       all 0.3s ease;
 }
 
 #hobbySection {
-  transition: background-color 0.3s ease;
+      transition:       background-color 0.3s ease;
 }
 
 .dark-mode {
-  background-color: #121212 !important;
-  color: #ffffff !important;
+      background-color: #121212 !important;
+      color:            #ffffff !important;
 }
 
 .dark-card {
-  background-color: #1e1e1e !important;
-  color: #ffffff !important;
+      background-color: #1e1e1e !important;
+      color:            #ffffff !important;
 }
-
-.trabalho {text-align: center;}
