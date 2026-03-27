@@ -1,66 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>     PCA     </title>
-  <link rel   ="shortcut icon"      href="images/PCA_Final_Icon.png"    type="image/x-icon">
-  <link href  ="css/bootstrap.css"  rel="stylesheet">
-  <link href  ="css/style.css"      rel="stylesheet">
-  <script src ="js/script.js"       defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCA</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/script.js" defer></script>
 </head>
 
-<body>
-<div class="nav">
-  <div><button onclick=  "changeTheme()" >Mudar Tema       </button>
-    </div> .
-  <div><button onclick=  "switchImage()" >Trocar Imagem    </button>
-    </div> .
-  <div><button onclick=  "addHobby()"    >Adicionar Hobby  </button>
-    </div>
+<body class="bg-light text-dark">
+
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light px-3">
+  <a class="navbar-brand" href="#">Portfólio</a>
+
+  <div class="ms-auto d-flex gap-2 flex-wrap">
+    <button id="themeBtn" class="btn btn-outline-dark">Dark Mode</button>
+    <button id="imageBtn" class="btn btn-outline-primary">Trocar Imagem</button>
+    <button id="hobbyBtn" class="btn btn-outline-success">Adicionar Hobby</button>
+    <button id="colorBtn" class="btn btn-outline-warning">Cor Aleatória</button>
+    <button id="resetBtn" class="btn btn-danger">Reset</button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div id="profileCard" class="card p-3 text-center">
+    <img id="profileImg" src="images/PC.png" class="rounded mx-auto d-block mb-3" width="150">
+    <h3 id="profileName">Pedro Correia</h3>
+    <p id="profileDesc">3D Developer</p>
+
+    <p><strong>Atualizações:</strong> <span id="updateCount">0</span></p>
+  </div>
+
+  <div id="hobbySection" class="mt-4 p-3 border rounded">
+    <h4>Hobbies</h4>
+    <ul id="hobbyList">
+      <li>Correr a Maratona Diáriamente. Ida e volta.</li>
+      <li>Levantar 500kg no ginásio, só mesmo naquela.</li>
+      <li>Inventar parvoíces para colocar nas listas de hobbies.</li>
+    </ul>
+  </div>
+
+  <!-- FORM -->
+  <div class="mt-4">
+    <h4>Personalizar Perfil</h4>
+    <form id="profileForm" class="row g-2">
+      <input id="nameInput" class="form-control" type="text" placeholder="Nome" required>
+      <input id="descInput" class="form-control" type="text" placeholder="Frase" required>
+      <input id="colorInput" class="form-control form-control-color" type="color">
+      <input id="imgInput" class="form-control" type="text" placeholder="URL da imagem">
+
+      <button class="btn btn-primary" type="submit">Atualizar</button>
+    </form>
+  </div>
+
+  <div class="mt-4 text-center">
+    <img id="mainImage"
+         src="https://www.hashstudioz.com/blog/wp-content/uploads/2022/07/low-code-No-code-vs-Custom-App-Development-300x169.png"
+         class="img-fluid rounded">
+  </div>
+
+  <div class="mt-5 text-center">
+    <h4>Piadas..</h4>
+    <p id="jokeText">Clicar que são mesmo tão boas quanto o meu código feito com AI..</p>
+    <button id="jokeBtn" class="btn btn-info">Carregar</button>
+  </div>
+
 </div>
 
-<hr>
-
-<section id="container1">
   <div>
-    <div id="title-box">
-      <h1>Meu Portfólio</h1>
-      </div>
-        <img src="images/PC.png" alt="Me" width="200">
-      <div id="presentation-box">
-      <h6>Sou estudante de Programação Low Code...</h6>
-      Planeador Técnico Multidisciplinar e desenvolvedor 3D.                  <br>
-      Foco: Produção Lean e Aprovisionamento.                                 <br>
-      Formação: Mecatrónica; CAD e sistemas de produção.                      <br>
-      Os clientes confiam em mim para encontrar soluções rápidas e económicas.<br>
-      </div>
-    <div id="image-box">
-      <img src="https://www.hashstudioz.com/blog/wp-content/uploads/2022/07/low-code-No-code-vs-Custom-App-Development-300x169.png" alt="Banner por link" >
-      </div>
-    <div id="list-box">
-      <il>
-      <li>Sql</li>
-      <li>Web</li>
-      <li>Gestão de Projecto</li>
-      </il>
-      </div>
+    <h4>Este é um trabalho que fiz em 3D.
+    </h4>
   </div>
-  <div>
-    <h2>Personalizar Portfólio</h2>
-      <form action="www.ourserver.pt">
-      <input type="text" placeholder="Nome:" required />
-      <input type="password" placeholder="Password:" required minlength="6" /><br>
-      <input type="text" placeholder="Frase de apresentação:" required />
-      <!-- Cor favorita:           Caixa-cor-picket
-      Foto (URL):             Caixa -->
-      <button type="submit">Atualizar Portfólio</button>
-      </form>
-  </div>
-</section>
-
-<hr>
 
 <section id="container2">
   <div>
@@ -81,18 +92,5 @@
   </div>
 </section>
 
-<hr>
-
-<div class="card">
-  <div class="card-body"> </div>
-    <h5 class="card-title">Pedro Correia</h5>
-    <p class="card-text">2026</p>
-    <a href="#nav" class="btn btn-primary" fixed-width: 0 0 50px>Top</a>  
-</div>
-
-<div><button onclick="changeDarkMode()">Light/Dark</button>
-</div>
-
 </body>
-
 </html>

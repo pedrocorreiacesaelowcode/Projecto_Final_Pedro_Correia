@@ -1,38 +1,146 @@
-mudarTemaBtn.addEventListener("click", changeToGreen);
+const themeBtn = document.getElementById("themeBtn");
+const imageBtn = document.getElementById("imageBtn");
+const hobbyBtn = document.getElementById("hobbyBtn");
+const colorBtn = document.getElementById("colorBtn");
+const resetBtn = document.getElementById("resetBtn");
+const jokeBtn = document.getElementById("jokeBtn");
 
-function changeTheme() {
-this.style.backgroundColor = "green";}
+const body = document.body;
+const navbar = document.getElementById("navbar");
 
-function changeColor();
-mySilkyChickens.style.backgroundColor = 'green';
+const mainImage = document.getElementById("mainImage");
+const hobbyList = document.getElementById("hobbyList");
+const hobbySection = document.getElementById("hobbySection");
 
-function makeRandom(){
-let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', "violet"];
-let mySpans = document.getElementsByTagName("span");
-count=0;
-for(let element of mySpans){element.style.color=colors[count++];}}
+const profileForm = document.getElementById("profileForm");
+const profileName = document.getElementById("profileName");
+const profileDesc = document.getElementById("profileDesc");
+const profileImg = document.getElementById("profileImg");
+const profileCard = document.getElementById("profileCard");
 
-function switchImage(){
-if  (banner.src ==
-                "https://images.unsplash.com/photo-1563281577-a7be47e20db9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80")
-    {banner.src =
-                "https://center-portugal.transforms.svdcdn.com/production/images/galinha-branca.jpg?w=1920&h=720&q=100&auto=format&fit=min&crop=focalpoint&fp-x=0.5479&fp-y=0.2387&dm=1720799383&s=e7548edce9a4bb9458eea0ca2e093d4f";}
-else{banner.src =
-                "https://images.unsplash.com/photo-1563281577-a7be47e20db9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80";}
-}
+const updateCount = document.getElementById("updateCount");
+const jokeText = document.getElementById("jokeText");
 
-function changeOrder(){
-let myList = document.querySelectorAll('li');
-for (let element of myList){
-    if  (element.classList.contains('highlight'))
-        (element.classList.remove('highlight'));
-    else(element.classList.add('highlight'))}}
+const initialState = {
+  name: "Pedro Correia",
+  desc: "3D Developer",
+  img: "images/PC.png",
+  mainImg: "https://www.hashstudioz.com/blog/wp-content/uploads/2022/07/low-code-No-code-vs-Custom-App-Development-300x169.png",
+  hobbies: ["Correr a Maratona Diáriamente. Ida e volta.", "Levantar 500kg no ginásio, só mesmo naquela.", "Inventar parvoíces para colocar nas listas de hobbies."]
+};
 
-function changeDarkMode(){
-    let myBody = document.querySelector('body');
-    if(myBody.classList.contains('day')){
-    myBody.classList.remove('night');
-    myBody.classList.add('day')
-    }else{
-    myBody.classList.remove('night');
-    myBody.classList.add('day')}}
+let count = localStorage.getItem("count");
+if (!count) count = 0;
+updateCount.innerText = count;
+
+themeBtn.addEventListener("click", () => {
+
+  body.classList.toggle("bg-dark");
+  body.classList.toggle("text-light");
+  body.classList.toggle("bg-light");
+  body.classList.toggle("text-dark");
+
+  navbar.classList.toggle("bg-dark");
+  navbar.classList.toggle("navbar-dark");
+  navbar.classList.toggle("bg-light");
+  navbar.classList.toggle("navbar-light");
+
+  profileCard.classList.toggle("bg-dark");
+  profileCard.classList.toggle("text-light");
+
+  if (themeBtn.innerText === "Tema") {
+    themeBtn.innerText = "Light Mode";
+  } else {
+    themeBtn.innerText = "Dark Mode";
+  }
+
+});
+
+imageBtn.addEventListener("click", () => {
+  if (mainImage.src.includes("hashstudioz")) {
+    mainImage.src = "https://picsum.photos/600";
+  } else {
+    mainImage.src = initialState.mainImg;
+  }
+});
+
+hobbyBtn.addEventListener("click", () => {
+  const hobby = prompt("Novo hobby:");
+  if (hobby) {
+    const li = document.createElement("li");
+    li.innerText = hobby;
+    hobbyList.appendChild(li);
+  }
+});
+
+colorBtn.addEventListener("click", () => {
+  const color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  hobbySection.style.backgroundColor = color;
+});
+
+profileForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("nameInput").value;
+  const desc = document.getElementById("descInput").value;
+  const color = document.getElementById("colorInput").value;
+  const img = document.getElementById("imgInput").value;
+
+  profileName.innerText = name;
+  profileDesc.innerText = desc;
+
+  if (img) profileImg.src = img;
+  if (color) profileCard.style.backgroundColor = color;
+
+  count++;
+  localStorage.setItem("count", count);
+  updateCount.innerText = count;
+});
+
+jokeBtn.addEventListener("click", () => {
+  fetch("https://official-joke-api.appspot.com/random_joke")
+    .then(res => res.json())
+    .then(data => {
+      jokeText.innerText = data.setup + " - " + data.punchline;
+    })
+    .catch(() => {
+      jokeText.innerText = "Erro ao carregar piada.";
+    });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    alert("Tem a certeza de que acabou a sua visita?");
+  }
+});
+
+resetBtn.addEventListener("click", () => {
+  body.classList.remove("dark-mode");
+  profileCard.classList.remove("dark-card");
+  navbar.classList.remove("bg-dark", "navbar-dark");
+  navbar.classList.add("bg-light", "navbar-light");
+
+  profileName.innerText = initialState.name;
+  profileDesc.innerText = initialState.desc;
+  profileImg.src = initialState.img;
+  profileCard.style.backgroundColor = "";
+
+  mainImage.src = initialState.mainImg;
+
+  hobbyList.innerHTML = "";
+  initialState.hobbies.forEach(h => {
+    const li = document.createElement("li");
+    li.innerText = h;
+    hobbyList.appendChild(li);
+  });
+
+  hobbySection.style.backgroundColor = "";
+
+  count = 0;
+  localStorage.setItem("count", count);
+  updateCount.innerText = count;
+
+  jokeText.innerText = "Clique no botão para carregar";
+
+  profileForm.reset();
+});

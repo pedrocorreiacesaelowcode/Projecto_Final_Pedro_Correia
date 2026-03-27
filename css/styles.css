@@ -1,47 +1,19 @@
-.nav{
-        width:          50%;
-        padding:        10%;
-        justify-content:space-evenly;
-        align-items:    center;
-        position:fixed;}
+body {
+  transition: all 0.3s ease;
+}
 
-body{
-        font-family: 'Sans-Serif', 'Gill Sans MT', 'Calibri', 'Trebuchet MS';
-        width:            100%;
-        padding:          2%;
-        justify-content:  center;
-        background-color: #ffffff;
-        color:            #000000;}
+#hobbySection {
+  transition: background-color 0.3s ease;
+}
 
-#container1{
-        width:          100%;
-        margin:         2%;
-        justify-content:left;
-        display:        flex;}
+.dark-mode {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
 
-#title-box{
-        width:          100%;
-        text-decoration:solid;
-        text-align:     left;}
+.dark-card {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
 
-#presentation-box{
-        width:          100%;
-        text-decoration:none;
-        text-align:     left;
-        padding:        2%;}
-
-#image-box{
-        width:          100%;
-        padding:        2% 20% 2% 2%;}
-
-#list-box{
-        padding:        1% 10% 5% 10%;}
-
-#container2{
-        width:          100%;
-        margin:         1%;
-        justify-content:center;
-        display:        flex;}
-
-#card{
-        text-align:     center;}
+.trabalho {text-align: center;}
